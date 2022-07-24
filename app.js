@@ -1,5 +1,6 @@
 const btn = document.getElementById("formBtn");
 let units = "imperial";
+const unitSwitch = document.querySelector("#current-weather");
 
 btn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -7,6 +8,15 @@ btn.addEventListener("click", (e) => {
   const locationInput = document.querySelector("#location").value;
 
   getWeather(locationInput);
+});
+
+unitSwitch.addEventListener("click", (e) => {
+  if (units === "imperial") {
+    units = "metric";
+  } else if (units === "metric") {
+    units = "imperial";
+  }
+  refreshWeather();
 });
 
 async function getWeather(location) {
@@ -17,8 +27,9 @@ async function getWeather(location) {
     );
     const weatherData = await response.json();
 
-    //console.log(weatherData);
+    console.log(weatherData);
     parseWeatherData(weatherData);
+    return weatherData;
   } catch (e) {
     console.log(e);
   }
@@ -26,33 +37,38 @@ async function getWeather(location) {
 
 function parseWeatherData(weatherData) {
   let tempUnit = "°F";
+  let windUnit = "MPH";
 
-  //if (units === "metric") {
-  //  tempUnit = "°C";
-  // }
+  if (units === "metric") {
+    tempUnit = "°C";
+    windUnit = "km/h";
+  } else if (units === "imperial") {
+    tempUnit = "°F";
+    windUnit = "MPH";
+  }
 
+  const cloudiness = document.querySelector("#cloudiness");
   const location = document.querySelector("#location-title");
-  location.textContent = `${weatherData.name}, ${weatherData.sys.country}`;
-
   const temp = document.querySelector("#current-weather");
-  const tempMax = document.querySelector("#hi-temp");
-  const tempMin = document.querySelector("#lo-temp");
   const feelsLike = document.querySelector("#feels-like");
+  const humidity = document.querySelector("#humidity");
+  const wind = document.querySelector("#wind-speed");
 
+  cloudiness.textContent = `${weatherData.weather[0].description}`;
+  location.textContent = `${weatherData.name}, ${weatherData.sys.country}`;
   temp.textContent = `${Math.round(weatherData.main.temp)} ${tempUnit}`;
-
   feelsLike.textContent = `Feels like: ${Math.round(
     weatherData.main.feels_like
   )} ${tempUnit}`;
-  /*tempMax.textContent = `H: ${Math.round(
-    weatherData.daily.temp.max
-  )} ${tempUnit}`;
-  tempMin.textContent = `L: ${Math.round(
-    weatherData.main.temp_min
-  )} ${tempUnit}`;
-
-  let humidity = weatherData.main.humidity;*/
+  humidity.textContent = `Humidity: ${weatherData.main.humidity}%`;
+  wind.textContent = `Wind Speed: ${Math.round(
+    weatherData.wind.speed
+  )} ${windUnit}`;
 }
 
-//default location*/
-getWeather("Chesapeake");
+function refreshWeather() {
+  let currentWeather = document.querySelector("#location-title").textContent;
+  getWeather(currentWeather);
+}
+
+getWeather("Virginia Beach");

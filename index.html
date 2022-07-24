@@ -9,17 +9,19 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <div class="main-display">
-      <div id="location-title"></div>
-      <div id="current-weather"></div>
-      <div id="feels-like"></div>
-      <div id="cloudiness"></div>
-      <div id="hi-temp"></div>
-      <div id="lo-temp"></div>
+    <div id="content">
+      <div class="main-display">
+        <div id="cloudiness"></div>
+        <div id="location-title"></div>
+        <div id="current-weather"></div>
+        <div id="feels-like"></div>
+        <div id="wind-speed"></div>
+        <div id="humidity"></div>
+      </div>
+      <form action="">
+        <input type="text" name="location" id="location" />
+        <button type="submit" id="formBtn">Submit</button>
+      </form>
     </div>
-    <form action="">
-      <input type="text" name="location" id="location" />
-      <button type="submit" id="formBtn">Submit</button>
-    </form>
   </body>
 </html>
