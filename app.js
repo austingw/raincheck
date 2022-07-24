@@ -1,6 +1,7 @@
 const btn = document.getElementById("formBtn");
 let units = "imperial";
 const unitSwitch = document.querySelector("#current-weather");
+const content = document.querySelector("#content");
 
 btn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -53,10 +54,12 @@ function parseWeatherData(weatherData) {
   const feelsLike = document.querySelector("#feels-like");
   const humidity = document.querySelector("#humidity");
   const wind = document.querySelector("#wind-speed");
+  const weatherType = weatherData.weather[0].main;
+  console.log(weatherType);
 
   cloudiness.textContent = `${weatherData.weather[0].description}`;
   location.textContent = `${weatherData.name}, ${weatherData.sys.country}`;
-  temp.textContent = `${Math.round(weatherData.main.temp)} ${tempUnit}`;
+  temp.textContent = `${Math.round(weatherData.main.temp)}${tempUnit}`;
   feelsLike.textContent = `Feels like: ${Math.round(
     weatherData.main.feels_like
   )} ${tempUnit}`;
@@ -64,6 +67,11 @@ function parseWeatherData(weatherData) {
   wind.textContent = `Wind Speed: ${Math.round(
     weatherData.wind.speed
   )} ${windUnit}`;
+
+  if (content.classList !== `$${weatherType}`) {
+    content.classList.remove(...content.classList);
+    content.classList.add(`${weatherType}`);
+  }
 }
 
 function refreshWeather() {

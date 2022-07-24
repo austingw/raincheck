@@ -7,18 +7,139 @@
 }
 
 #content {
-  padding-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: top;
+  padding-top: 15vh;
+  height: 100vh;
 }
 
 .main-display {
   background-color: rgba(0, 0, 0, 0.219);
   color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 5px;
+  height: 15rem;
+  width: 25rem;
+  display: grid;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 15rem;
+  height: 2rem;
+  border: none;
+  outline: 1px solid rgba(255, 255, 255, 0.479);
+  background: rgba(255, 255, 255, 0.11);
+  color: #ffffff;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+input:hover {
+  outline: 1px solid rgba(0, 0, 0, 0.808);
+  background: rgba(255, 255, 255, 0.616);
+  color: #000000bb;
+}
+
+#location-title {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: lighter;
+  opacity: 60%;
+  text-align: center;
 }
 
 #current-weather {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+#cloudiness {
+  font-size: 1rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+#feels-like {
+  font-size: 1rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+#wind-speed {
+  font-size: 1rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+#humidity {
+  font-size: 1rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+#formBtn {
+  margin-top: 10px;
+  padding: 5px;
+  width: auto;
+  outline: 1px solid rgba(255, 255, 255, 0.479);
+  background: rgba(255, 255, 255, 0.11);
+  color: #ffffff;
+  border: none;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+
+#formBtn:hover {
+  outline: 1px solid rgba(0, 0, 0, 0.808);
+  background: rgba(255, 255, 255, 0.616);
   cursor: pointer;
+  color: black;
+}
+
+.Thunderstorm {
+  background-image: url(./images/thunderstorm.jpg);
+  background-position: 0%;
+}
+
+.Drizzle {
+  background-image: url(./images/drizzle.jpg);
+  background-position: 0%;
+}
+
+.Rain {
+  background-image: url(./images/rain.jpg);
+  background-position: 0%;
+}
+
+.Snow {
+  background-image: url(./images/snow.jpg);
+  background-position: 0%;
+}
+
+.Atmosphere {
+  background-image: url(./images/atmosphere.jpg);
+  background-position: 0%;
+}
+
+.Clear {
+  background-image: url(./images/clear.jpg);
+  background-position: 0%;
+}
+
+.Clouds {
+  background-image: url(./images/clouds.jpg);
+  background-position: 10%;
 }
