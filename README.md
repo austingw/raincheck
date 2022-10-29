@@ -6,7 +6,7 @@ A simple vanilla JS project that displays the current weather for a given city u
 
 # About #
 
-This application uses the OpenWeather API to pull current weather data for a given city, based upon an assignment. Due to the scope of the project only _exact_ city names can be used (i.e. no zip codes, mispelled names, etc.) 
+This application uses the OpenWeather API to pull current weather data for a given city, based upon an assignment from The Odin Project. Due to the scope of the project only _exact_ city names can be used (i.e. no zip codes, mispelled names, etc.) 
 
 # Features #
 
