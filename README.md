@@ -1,4 +1,6 @@
-![weather](https://raw.githubusercontent.com/austingw/raincheck/main/images/weather.gif)
+<p align="center">
+<img src=https://raw.githubusercontent.com/austingw/raincheck/main/images/weather.gif alt="Raincheck GIF" />
+</p>
 
 # Raincheck #
 
