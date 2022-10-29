@@ -1,3 +1,3 @@
-![weather](./directory_1/directory_2/.../directory_n/weather.gif)
+![weather](https://raw.githubusercontent.com/austingw/raincheck/main/images/weather.gif)
 
 # raincheck
